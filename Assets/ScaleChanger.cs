@@ -18,4 +18,11 @@ public class ScaleChanger : MonoBehaviour
     {
         obj.transform.localScale = new Vector3(slider.value, slider.value, 1);
     }
+    public void objsScaler()
+    {
+        for(int i = 0; i < objs.Length; i++)
+        {
+            objs[i].transform.localScale = new Vector3(slider.value, slider.value, 1);
+        }
+    }
 }
