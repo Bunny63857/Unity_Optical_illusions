@@ -13,4 +13,5 @@ Releaseよりファイルをダウンロードし，解凍後にexeファイル�
 https://github.com/Bunny63857/Unity_Optical_illusions/releases/tag/v1.0
 
 ## 実行環境
-Windows10
+- Windows10
+- Unity2019.2.1f
