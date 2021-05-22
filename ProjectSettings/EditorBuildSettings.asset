@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Lilac-chaser.unity
-    guid: ff83d0c9f45c56849a967cfdd8fcced8
+    path: Assets/Scenes/Square_illusion.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Motion-induced  blindness.unity
     guid: b70c21d1778c56b47b4cf49ffdbd3349
   - enabled: 1
-    path: Assets/Scenes/Square_illusion.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Lilac-chaser.unity
+    guid: ff83d0c9f45c56849a967cfdd8fcced8
   m_configObjects: {}
