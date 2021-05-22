@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Liac_chaser : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Liac_chaser : MonoBehaviour
     public GameObject[] spheres;
     private int liac_num;
     public float speed;
+    public Slider slider;
 
     // Start is called before the first frame update
     void Start()
@@ -18,14 +20,8 @@ public class Liac_chaser : MonoBehaviour
         }
         InitPos();
         liac_num =0;
-        InvokeRepeating("Liac", 1, speed);
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //InvokeRepeating("Liac", 1, speed);
+        StartCoroutine(Liac());
     }
 
     //ターゲット周りに円形に配置
@@ -37,7 +33,7 @@ public class Liac_chaser : MonoBehaviour
             spheres[i].transform.position = target_pos + new Vector3(4*Mathf.Sin(2*Mathf.PI*i/spheres.Length), 4 * Mathf.Cos(2 * Mathf.PI * i / spheres.Length), 0);
         }
     }
-
+    /*
     void Liac()
     {
         Spheres_On_Off(spheres[liac_num]);
@@ -47,6 +43,20 @@ public class Liac_chaser : MonoBehaviour
         {
             liac_num = 0;
         }
+    }
+    */
+    IEnumerator Liac()
+    {
+        
+        Spheres_On_Off(spheres[liac_num]);
+        liac_num++;
+        
+        if (liac_num == spheres.Length)
+        {
+            liac_num = 0;
+        }
+        yield return new WaitForSeconds(speed);
+        StartCoroutine(Liac());
     }
 
     void Spheres_On_Off(GameObject obj)
@@ -66,5 +76,10 @@ public class Liac_chaser : MonoBehaviour
     {
         yield return new WaitForSeconds(speed);
         obj.SetActive(true);
+    }
+
+    public void SetSpeed()
+    {
+        speed = slider.value;
     }
 }
