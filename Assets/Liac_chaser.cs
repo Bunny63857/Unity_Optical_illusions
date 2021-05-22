@@ -22,6 +22,7 @@ public class Liac_chaser : MonoBehaviour
         liac_num =0;
         //InvokeRepeating("Liac", 1, speed);
         StartCoroutine(Liac());
+        slider.value = 0.1f;
     }
 
     //ターゲット周りに円形に配置
